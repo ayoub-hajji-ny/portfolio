@@ -34,18 +34,19 @@ const Navbar = ({ language, setLanguage }) => {
         <div className='container mx-auto flex justify-between items-center'>
           <div className='text-2xl font-bold'>Ayoub</div>
           <div className='hidden md:flex space-x-8 items-center'>
-            <a href='#home' className='hover:text-gray-400 transition duration-300'>
+            {/*<a href='#home' className='hover:text-gray-400 transition duration-300'>
               {translations[language].home}
-            </a>
+            </a>*/}
             <a href='#about' className='hover:text-gray-400 transition duration-300'>
               {translations[language].about}
-            </a>
-            <a href='#projects' className='hover:text-gray-400 transition duration-300'>
-              {translations[language].projects}
             </a>
             <a href='#education' className='hover:text-gray-400 transition duration-300'>
               {translations[language].education}
             </a>
+            <a href='#projects' className='hover:text-gray-400 transition duration-300'>
+              {translations[language].projects}
+            </a>
+            
           </div>
           <div className='flex items-center space-x-4'>
             <button
@@ -74,7 +75,16 @@ const Navbar = ({ language, setLanguage }) => {
             <p className='mb-2'>📍 Le Kremlin-Bicêtre, 94270</p>
             <p className='mb-2'>📞 07 55 67 69 63</p>
             <p className='mb-2'>📧 ayoub.hajji@epita.fr</p>
-            <p className='mb-4'>💼 ayb-haj</p>
+            <p className='mb-4'>💼
+              <a
+                href='https://www.linkedin.com/in/ayb-haj/'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='text-blue-500 hover:underline'
+              >
+                LinkedIn Profile
+              </a>
+            </p>
             <button
               onClick={closeModal}
               className='bg-gradient-to-r from-red-500 to-pink-500 text-white px-4 py-2 rounded-full transform transition-transform duration-300 hover:scale-105'

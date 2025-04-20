@@ -2,7 +2,34 @@ import React from 'react';
 import AboutImage from '../assets/profile1.png';
 import { FaCode, FaDatabase, FaGitAlt, FaLinux, FaMicrosoft } from 'react-icons/fa';
 
-export const About = () => {
+export const About = ({ language }) => {
+  const translations = {
+    en: {
+      title: 'About Me',
+      description:
+        'Currently a computer engineering student at EPITA, I am seeking an apprenticeship contract for the next three years, starting as soon as possible. Passionate, determined, and meticulous, I aim to enhance my technical skills while contributing to an innovative company.',
+      skillsTitle: 'Skills',
+      languages: [
+        { name: 'Arabic', level: 'Native' },
+        { name: 'French', level: 'Bilingual' },
+        { name: 'English', level: 'B2' },
+        { name: 'Spanish', level: 'A1' },
+      ],
+    },
+    fr: {
+      title: 'À Propos de Moi',
+      description:
+        'Actuellement étudiant en ingénierie informatique à EPITA, je recherche un contrat d’apprentissage pour les trois prochaines années, à commencer dès que possible. Passionné, déterminé et méticuleux, je vise à améliorer mes compétences techniques tout en contribuant à une entreprise innovante.',
+      skillsTitle: 'Compétences',
+      languages: [
+        { name: 'Arabe', level: 'Langue Maternelle' },
+        { name: 'Français', level: 'Bilingue' },
+        { name: 'Anglais', level: 'B2' },
+        { name: 'Espagnol', level: 'A1' },
+      ],
+    },
+  };
+
   const skills = [
     { name: 'C', icon: <FaCode />, level: 'Advanced' },
     { name: 'C#', icon: <FaCode />, level: 'Advanced' },
@@ -15,10 +42,12 @@ export const About = () => {
     { name: 'Microsoft Office 365', icon: <FaMicrosoft />, level: 'Proficient' },
   ];
 
+  const { title, description, skillsTitle, languages } = translations[language];
+
   return (
     <div className='bg-black text-white py-20' id='about'>
       <div className='container mx-auto px-8 md:px-16 lg:px-24'>
-        <h2 className='text-4xl font-bold text-center mb-12'>About Me</h2>
+        <h2 className='text-4xl font-bold text-center mb-12'>{title}</h2>
         <div className='flex flex-col md:flex-row items-center md:space-x-12'>
           <img
             src={AboutImage}
@@ -26,13 +55,8 @@ export const About = () => {
             className='w-72 h-80 rounded object-cover mb-8 md:mb-0'
           />
           <div className='flex-1'>
-            <p className='text-lg mb-8 text-justify'>
-              Currently a computer engineering student at EPITA, I am seeking an apprenticeship
-              contract for the next three years, starting as soon as possible. Passionate,
-              determined, and meticulous, I aim to enhance my technical skills while contributing
-              to an innovative company.
-            </p>
-            <h3 className='text-2xl font-bold mb-6'>Skills</h3>
+            <p className='text-lg mb-8 text-justify'>{description}</p>
+            <h3 className='text-2xl font-bold mb-6'>{skillsTitle}</h3>
             <div className='grid grid-cols-2 md:grid-cols-3 gap-6'>
               {skills.map((skill, index) => (
                 <div
@@ -48,42 +72,17 @@ export const About = () => {
               ))}
             </div>
             <div className='mt-12 flex justify-between text-center'>
-            <div>
-                <h3
-                  className='text-2xl font-bold text-transparent bg-clip-text 
-                  bg-gradient-to-r from-green-400 to-blue-500'
-                >
-                  Arabic
-                </h3>
-                <p>Native</p>
-              </div>
-              <div>
-                <h3
-                  className='text-2xl font-bold text-transparent bg-clip-text 
-                  bg-gradient-to-r from-green-400 to-blue-500'
-                >
-                  French
-                </h3>
-                <p>Bilingual</p>
-              </div>
-              <div>
-                <h3
-                  className='text-2xl font-bold text-transparent bg-clip-text 
-                  bg-gradient-to-r from-green-400 to-blue-500'
-                >
-                  English
-                </h3>
-                <p>B2</p>
-              </div>
-              <div>
-                <h3
-                  className='text-2xl font-bold text-transparent bg-clip-text 
-                  bg-gradient-to-r from-green-400 to-blue-500'
-                >
-                  Spanish
-                </h3>
-                <p>A1</p>
-              </div>
+              {languages.map((lang, index) => (
+                <div key={index}>
+                  <h3
+                    className='text-2xl font-bold text-transparent bg-clip-text 
+                    bg-gradient-to-r from-green-400 to-blue-500'
+                  >
+                    {lang.name}
+                  </h3>
+                  <p>{lang.level}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>

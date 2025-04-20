@@ -13,9 +13,9 @@ const App = () => {
     <>
       <Navbar language={language} setLanguage={setLanguage} />
       <Hero language={language} />
-      <About />
+      <About language={language}/>
       <Education language={language} />
-      <Projects />
+      <Projects language={language} />
     </>
   );
 };

@@ -15,6 +15,11 @@ export const About = ({ language }) => {
         { name: 'English', level: 'B2' },
         { name: 'Spanish', level: 'A1' },
       ],
+      skillLevels: {
+        advanced: 'Advanced',
+        intermediate: 'Intermediate',
+        proficient: 'Proficient',
+      },
     },
     fr: {
       title: 'À Propos de Moi',
@@ -22,27 +27,32 @@ export const About = ({ language }) => {
         'Actuellement étudiant en ingénierie informatique à EPITA, je recherche un contrat d’apprentissage pour les trois prochaines années, à commencer dès que possible. Passionné, déterminé et méticuleux, je vise à améliorer mes compétences techniques tout en contribuant à une entreprise innovante.',
       skillsTitle: 'Compétences',
       languages: [
-        { name: 'Arabe', level: 'Langue Maternelle' },
+        { name: 'Arabe', level: 'Natif' },
         { name: 'Français', level: 'Bilingue' },
         { name: 'Anglais', level: 'B2' },
         { name: 'Espagnol', level: 'A1' },
       ],
+      skillLevels: {
+        advanced: 'Avancé',
+        intermediate: 'Intermédiaire',
+        proficient: 'Compétent',
+      },
     },
   };
 
   const skills = [
-    { name: 'C', icon: <FaCode />, level: 'Advanced' },
-    { name: 'C#', icon: <FaCode />, level: 'Advanced' },
-    { name: 'Python', icon: <FaCode />, level: 'Advanced' },
-    { name: 'SQL', icon: <FaDatabase />, level: 'Intermediate' },
-    { name: 'Java', icon: <FaCode />, level: 'Intermediate' },
-    { name: 'R', icon: <FaCode />, level: 'Intermediate' },
-    { name: 'Git', icon: <FaGitAlt />, level: 'Advanced' },
-    { name: 'Linux', icon: <FaLinux />, level: 'Advanced' },
-    { name: 'Microsoft Office 365', icon: <FaMicrosoft />, level: 'Proficient' },
+    { name: 'C', icon: <FaCode />, level: 'advanced' },
+    { name: 'C#', icon: <FaCode />, level: 'advanced' },
+    { name: 'Python', icon: <FaCode />, level: 'advanced' },
+    { name: 'SQL', icon: <FaDatabase />, level: 'intermediate' },
+    { name: 'Java', icon: <FaCode />, level: 'intermediate' },
+    { name: 'R', icon: <FaCode />, level: 'intermediate' },
+    { name: 'Git', icon: <FaGitAlt />, level: 'advanced' },
+    { name: 'Linux', icon: <FaLinux />, level: 'advanced' },
+    { name: 'Microsoft Office 365', icon: <FaMicrosoft />, level: 'proficient' },
   ];
 
-  const { title, description, skillsTitle, languages } = translations[language];
+  const { title, description, skillsTitle, languages, skillLevels } = translations[language];
 
   return (
     <div className='bg-black text-white py-20' id='about'>
@@ -67,7 +77,7 @@ export const About = ({ language }) => {
                     {skill.icon}
                   </div>
                   <h4 className='text-lg font-semibold'>{skill.name}</h4>
-                  <p className='text-sm text-gray-400'>{skill.level}</p>
+                  <p className='text-sm text-gray-400'>{skillLevels[skill.level]}</p>
                 </div>
               ))}
             </div>

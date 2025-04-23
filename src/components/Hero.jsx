@@ -14,7 +14,7 @@ export const Hero = ({ language }) => {
     },
     fr: {
       title: "Je suis Ayoub Hajji, Futur Ingénieur Informatique",
-      description: "Je suis étudiant en ingénierie informatique à l'EPITA, spécialisé en cybersécurité.",
+      description: "Étudiant en ingénieurie informatique à l’EPITA spécialisé en cybersécurité, en recherche actif d’un apprentissage de trois ans à partir de septembre 2025",
       contact: 'Contactez-moi',
       resume: 'CV',
     },

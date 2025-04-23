@@ -7,7 +7,7 @@ export const About = ({ language }) => {
     en: {
       title: 'About Me',
       description:
-        'Currently a computer engineering student at EPITA, I am seeking an apprenticeship contract for the next three years, starting as soon as possible. Passionate, determined, and meticulous, I aim to enhance my technical skills while contributing to an innovative company.',
+        'Currently a computer engineering student at EPITA, I am seeking an apprenticeship contract for the next three years. Passionate, determined, and meticulous, I aim to enhance my technical skills while contributing to an innovative company.',
       skillsTitle: 'Skills',
       languages: [
         { name: 'Arabic', level: 'Native' },
@@ -24,7 +24,7 @@ export const About = ({ language }) => {
     fr: {
       title: 'À Propos de Moi',
       description:
-        'Actuellement étudiant en ingénierie informatique à EPITA, je recherche un contrat d’apprentissage pour les trois prochaines années, à commencer dès que possible. Passionné, déterminé et méticuleux, je vise à améliorer mes compétences techniques tout en contribuant à une entreprise innovante.',
+        'Actuellement étudiant en ingénierie informatique à EPITA, je recherche un contrat d’apprentissage pour les trois prochaines années. Passionné, déterminé et méticuleux, je vise à améliorer mes compétences techniques tout en contribuant à une entreprise innovante.',
       skillsTitle: 'Compétences',
       languages: [
         { name: 'Arabe', level: 'Natif' },

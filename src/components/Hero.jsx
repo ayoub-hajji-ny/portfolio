@@ -77,7 +77,7 @@ export const Hero = ({ language }) => {
             <p className='mb-2 pl-20'>📧 ayoub.hajji@epita.fr</p>
             <p className='mb-4 pl-20'>💼
               <a
-                href="https://www.linkedin.com/in/ayoub-hajji/"
+                href="https://www.linkedin.com/in/ayb-haj/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className='text-blue-400 hover:underline'
